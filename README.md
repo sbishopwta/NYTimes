@@ -15,7 +15,32 @@ I look forward to your feedback!
 ##3rd Party
 [Nick Lockwood's AsyncImageView library] (https://github.com/nicklockwood/AsyncImageView).
 
-##ios-coding-exercise-sbishopwta
+##Q&A
+> You may have noticed that only a few number of articles are returned by the API. Actually, there is a “page” parameter in the API that allows you to specify different pages to return. How would you implement this to display more results for a user’s search?
+
+Add a table footer view that displays a loading indicator. In willDisplayCell, fetch the next page of data and append the results to your data source. Hide the footer once the last page is reached.
+
+> The search API has a limit of 10 requests per second per API key. If you were to distribute this app to the public, what issues may this bring? How would you approach solving those issues?
+
+A request limit on the API key could result in failed requests if the limit is hit.
+
+Some solutions:
+
+If using multiple API keys is allowed and doable, you could have a random API key generator function in your app that assigns a random API key per request.
+
+If not, you could use an [exponential back off algorithm](https://en.wikipedia.org/wiki/Exponential_backoff).
+
+My ideal solution would:
+1. Minimize repeated requests (Make sure you have a debouncer on your search textfield so requests are only made after the user has stopped typing.)
+2. Keep as many people on separate API keys as possible
+3. Use an exponential back off algorithm when necessary
+4. Let the user know if a requests takes longer than a certain threshold.
+
+Another solution would be to contact NYT and ask to increase the API key request limit.
+
+
+
+##Prompt: ios-coding-exercise-sbishopwta
 
 Make a simple app that can search the New York Times article search API and return a list of articles for a given search query. The user should also be able to click on one of the returned articles and view the whole article in a web browser.
 
