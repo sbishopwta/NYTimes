@@ -19,7 +19,7 @@ enum SerializationError: Error {
     case invalid(String, Any)
 }
 
-fileprivate enum Constants {
+enum Constants {
     static let url = "url"
     static let webUrl = "web_url"
     static let section = "section"
