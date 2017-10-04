@@ -1,4 +1,4 @@
-#HotelTonight Test Project
+# HotelTonight Test Project
 This app supports iPhones and iPads running iOS 10.
 Built with Xcode Version 8.2.1 (8C1002). Written in Swift 3 and Objective-C.
 
@@ -12,10 +12,10 @@ Also, after research, design, and writing the code, this project took somewhere 
 
 I look forward to your feedback!
 
-##3rd Party
-[Nick Lockwood's AsyncImageView library] (https://github.com/nicklockwood/AsyncImageView).
+## 3rd Party
+[Nick Lockwood's AsyncImageView library](https://github.com/nicklockwood/AsyncImageView).
 
-##Q&A
+## Q&A
 > You may have noticed that only a few number of articles are returned by the API. Actually, there is a “page” parameter in the API that allows you to specify different pages to return. How would you implement this to display more results for a user’s search?
 
 Add a table footer view that displays a loading indicator. In willDisplayCell, fetch the next page of data and append the results to your data source. Hide the footer once the last page is reached.
@@ -40,7 +40,7 @@ Another solution would be to contact NYT and ask to increase the API key request
 
 
 
-##Prompt: ios-coding-exercise-sbishopwta
+## Prompt: ios-coding-exercise-sbishopwta
 
 Make a simple app that can search the New York Times article search API and return a list of articles for a given search query. The user should also be able to click on one of the returned articles and view the whole article in a web browser.
 
